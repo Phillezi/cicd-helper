@@ -13,8 +13,8 @@ RUN make
 
 FROM alpine:latest AS runner
 
-COPY --from=builder /app/bin/cicd-helper .
+COPY --from=builder /app/bin/cicd-helper /bin/cicd-helper
 
 EXPOSE 8080
 
-ENTRYPOINT [ "./cicd-helper" ]
+CMD [ "./bin/cicd-helper" ]
