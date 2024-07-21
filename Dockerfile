@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM golang:bookworm AS builder
+FROM golang:bookworm AS builder
 
 WORKDIR /app
 
@@ -17,4 +17,4 @@ COPY --from=builder /app/bin/cicd-helper /bin/cicd-helper
 
 EXPOSE 8080
 
-CMD [ "./bin/cicd-helper" ]
+CMD [ "/bin/cicd-helper" ]
