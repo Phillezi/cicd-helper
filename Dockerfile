@@ -11,7 +11,7 @@ COPY . .
 
 RUN make
 
-FROM alpine:latest AS runner
+FROM debian:stable-slim AS runner
 
 COPY --from=builder /app/bin/cicd-helper /bin/cicd-helper
 
