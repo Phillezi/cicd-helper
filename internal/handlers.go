@@ -2,6 +2,7 @@ package internal
 
 import (
 	"bytes"
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -61,7 +62,11 @@ func ForwardRequest(apiURL string) http.HandlerFunc {
 		req.Header.Set("Content-Type", "application/json")
 		req.Header.Set("X-Api-Key", token)
 
-		client := &http.Client{}
+		tr := &http.Transport{
+			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+		}
+
+		client := &http.Client{Transport: tr}
 		resp, err := client.Do(req)
 		if err != nil {
 			log.Errorln("Error forwarding request", err)
