@@ -2,6 +2,10 @@ FROM --platform=$BUILDPLATFORM golang:bookworm AS builder
 
 WORKDIR /app
 
+RUN apt-get update \
+    apt-get install make \
+    apt-get clean
+
 COPY . .
 
 RUN make
