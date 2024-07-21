@@ -4,8 +4,8 @@ WORKDIR /app
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update \
-    apt-get install make
+RUN apt-get update &&\
+    apt-get install -y make
 
 COPY . .
 
