@@ -64,7 +64,7 @@ func ForwardRequest(apiURL string) http.HandlerFunc {
 		client := &http.Client{}
 		resp, err := client.Do(req)
 		if err != nil {
-			log.Errorln("Error forwarding request", http.StatusInternalServerError)
+			log.Errorln("Error forwarding request", err)
 			http.Error(w, "Error forwarding request", http.StatusInternalServerError)
 			return
 		}
