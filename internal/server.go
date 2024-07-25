@@ -19,6 +19,7 @@ func Run() {
 	}
 
 	http.HandleFunc("/forward", ForwardRequest(apiURL))
+	http.HandleFunc("/harbor/restart", HarborAutoRestart(apiURL))
 
 	log.Printf("Server is listening on port %s...", port)
 	if err := http.ListenAndServe(":"+port, nil); err != nil {
