@@ -1,6 +1,6 @@
 # cicd-helper
 
-Small little cicd helper that can forward harbor webhooks to restart deployments on `kthcloud` by wrapping the `kthcloud` api.
+Small little cicd helper that can forward harbor webhooks to restart deployments on [`kthcloud`](https://cloud.cbh.kth.se/) by wrapping the [`kthcloud` api](https://api.cloud.cbh.kth.se/deploy/v2/docs/index.html).
 
 ## Usage
 
