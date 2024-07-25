@@ -5,7 +5,6 @@ go 1.22.5
 require (
 	github.com/sirupsen/logrus v1.9.3
 	go-deploy v0.0.0-00010101000000-000000000000
-//go-deploy/dto/v2/body v0.0.0-00010101000000-000000000000
 )
 
 require (
@@ -127,5 +126,3 @@ require (
 )
 
 replace go-deploy => github.com/kthcloud/go-deploy v0.0.0-20240613154044-4662d95a90ad
-
-//replace go-deploy/dto/v2/body => github.com/kthcloud/go-deploy/dto/v2/body v0.0.0-20240613154044-4662d95a90ad
