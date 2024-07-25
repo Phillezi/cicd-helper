@@ -21,6 +21,11 @@ func Run() {
 	http.HandleFunc("/forward", ForwardRequest(apiURL))
 	http.HandleFunc("/harbor/restart", HarborAutoRestart(apiURL))
 
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		githubURL := "https://github.com/Phillezi/cicd-helper"
+		http.Redirect(w, r, githubURL, http.StatusSeeOther)
+	})
+
 	log.Printf("Server is listening on port %s...", port)
 	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		log.Fatalf("Could not start server: %s\n", err)
